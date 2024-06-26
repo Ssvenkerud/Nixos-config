@@ -24,7 +24,7 @@
         nix
         home-manager
         git;
-        #just
+       #just
         #pre-commit
 
         #age
