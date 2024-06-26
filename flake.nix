@@ -50,7 +50,7 @@ outputs = { self, disko, nixpkgs, home-manager, ... } @ inputs:
         nixpkgs.legacyPackages.${system}.nixpkgs-fmt
       );
 
-     Shell configured with packages that are typically only needed when working on or with nix-config.
+     #Shell configured with packages that are typically only needed when working on or with nix-config.
     devShells = forAllSystems
       (system:
         let pkgs = nixpkgs.legacyPackages.${system};
