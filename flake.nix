@@ -1,7 +1,7 @@
 {
 description = "Nix configuration of Ydalir";
 
-outputs = inputs@{ self, ... }:{
+outputs = inputs@{ self, ... }:
     let
     # ---- SYSTEM SETTINGS ---- #
       systemSettings = {
@@ -48,18 +48,19 @@ outputs = inputs@{ self, ... }:{
       # configure pkgs
       # use nixpkgs if running a server (homelab or worklab profile)
       # otherwise use patched nixos-unstable nixpkgs
-      pkgs = (if ((systemSettings.profile == "homelab") || (systemSettings.profile == "worklab"))
-              then
-                pkgs-stable
-              else
-                (import nixpkgs-patched {
-                  system = systemSettings.system;
-                  config = {
-                    allowUnfree = true;
-                    allowUnfreePredicate = (_: true);
-                  };
-                  overlays = [ inputs.rust-overlay.overlays.default ];
-                }));
+      pkgs = pkgs-stable
+              #(if ((systemSettings.profile == "homelab") || (systemSettings.profile == "worklab"))
+              #then
+              #  pkgs-stable
+              #else
+              #  (import nixpkgs-patched {
+              #    system = systemSettings.system;
+              #    config = {
+              #      allowUnfree = true;
+              #      allowUnfreePredicate = (_: true);
+              #    };
+              #    overlays = [ inputs.rust-overlay.overlays.default ];
+              #  }));
 
       pkgs-stable = import inputs.nixpkgs-stable {
         system = systemSettings.system;
