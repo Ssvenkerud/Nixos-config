@@ -165,8 +165,8 @@ outputs = inputs@{ self, ... }:
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
     nixpkgs-stable.url = "nixpkgs/nixos-23.11";
-    #kdenlive-pin-nixpkgs.url = "nixpkgs/cfec6d9203a461d9d698d8a60ef003cac6d0da94";
-    #nwg-dock-hyprland-pin-nixpkgs.url = "nixpkgs/2098d845d76f8a21ae4fe12ed7c7df49098d3f15";
+    kdenlive-pin-nixpkgs.url = "nixpkgs/cfec6d9203a461d9d698d8a60ef003cac6d0da94";
+    nwg-dock-hyprland-pin-nixpkgs.url = "nixpkgs/2098d845d76f8a21ae4fe12ed7c7df49098d3f15";
 
     home-manager-unstable.url = "github:nix-community/home-manager/master";
     home-manager-unstable.inputs.nixpkgs.follows = "nixpkgs";
@@ -174,25 +174,25 @@ outputs = inputs@{ self, ... }:
     home-manager-stable.url = "github:nix-community/home-manager/release-23.11";
     home-manager-stable.inputs.nixpkgs.follows = "nixpkgs-stable";
 
-    #hyprland = {
-    #  type = "git";
-    #  url = "https://github.com/hyprwm/Hyprland";
-    #  submodules = true;
-    #  rev = "918d8340afd652b011b937d29d5eea0be08467f5";
-    #};
-    #hyprland.inputs.nixpkgs.follows = "nixpkgs";
-    #hyprland-plugins.url = "github:hyprwm/hyprland-plugins/3ae670253a5a3ae1e3a3104fb732a8c990a31487";
-    #hyprland-plugins.inputs.hyprland.follows = "hyprland";
-    #hycov.url = "github:DreamMaoMao/hycov/de15cdd6bf2e46cbc69735307f340b57e2ce3dd0";
-    #hycov.inputs.hyprland.follows = "hyprland";
-    #hyprgrass.url = "github:horriblename/hyprgrass/736119f828eecaed2deaae1d6ff1f50d6dabaaba";
-    #hyprgrass.inputs.hyprland.follows = "hyprland";
+    hyprland = {
+      type = "git";
+      url = "https://github.com/hyprwm/Hyprland";
+      submodules = true;
+      rev = "918d8340afd652b011b937d29d5eea0be08467f5";
+    };
+    hyprland.inputs.nixpkgs.follows = "nixpkgs";
+    hyprland-plugins.url = "github:hyprwm/hyprland-plugins/3ae670253a5a3ae1e3a3104fb732a8c990a31487";
+    hyprland-plugins.inputs.hyprland.follows = "hyprland";
+    hycov.url = "github:DreamMaoMao/hycov/de15cdd6bf2e46cbc69735307f340b57e2ce3dd0";
+    hycov.inputs.hyprland.follows = "hyprland";
+    hyprgrass.url = "github:horriblename/hyprgrass/736119f828eecaed2deaae1d6ff1f50d6dabaaba";
+    hyprgrass.inputs.hyprland.follows = "hyprland";
 
-    #stylix.url = "github:danth/stylix";
+    stylix.url = "github:danth/stylix";
 
-    #blocklist-hosts = {
-    #  url = "github:StevenBlack/hosts";
-    #  flake = false;
-    #};
+    blocklist-hosts = {
+      url = "github:StevenBlack/hosts";
+      flake = false;
+    };
   };
 }
