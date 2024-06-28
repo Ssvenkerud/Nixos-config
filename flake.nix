@@ -6,7 +6,7 @@ outputs = inputs@{ self, ... }:
     # ---- SYSTEM SETTINGS ---- #
       systemSettings = {
         system = "x86_64-linux"; # system arch
-        hostname = "alm"; # hostname
+        hostname = "nixos"; # hostname
         profile = "personal"; # select a profile defined from my profiles directory
         timezone = "Europe/Oslo"; # select timezone
         locale = "no_NB.UTF-8"; # select locale
@@ -16,8 +16,8 @@ outputs = inputs@{ self, ... }:
       };
             # ----- USER SETTINGS ----- #
       userSettings = rec {
-        username = "simen"; # username
-        name = "SImen"; # name/identifier
+        username = "s"; # username
+        name = "Simen"; # name/identifier
         email = "simen@ullrscrafts.com"; # email (used for certain configurations)
         dotfilesDir = "~/.Nixos-config"; # absolute path of the local repo
         theme = "io"; # selcted theme from my themes directory (./themes/)
@@ -48,7 +48,7 @@ outputs = inputs@{ self, ... }:
       # configure pkgs
       # use nixpkgs if running a server (homelab or worklab profile)
       # otherwise use patched nixos-unstable nixpkgs
-      pkgs = pkgs-stable
+      pkgs = pkgs-stable;
               #(if ((systemSettings.profile == "homelab") || (systemSettings.profile == "worklab"))
               #then
               #  pkgs-stable
