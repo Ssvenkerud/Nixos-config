@@ -6,7 +6,7 @@ outputs = inputs@{ self, ... }:
     # ---- SYSTEM SETTINGS ---- #
       systemSettings = {
         system = "x86_64-linux"; # system arch
-        hostname = "nixos"; # hostname
+        hostname = "alm"; # hostname
         profile = "personal"; # select a profile defined from my profiles directory
         timezone = "Europe/Oslo"; # select timezone
         locale = "no_NB.UTF-8"; # select locale
